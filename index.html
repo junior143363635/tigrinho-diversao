@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐯 Tigrinho Diversão</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <div class="logo">🐯 Tigrinho Diversão</div>
+        <div class="area-usuario">
+            <span id="nomeUsuario" class="oculto"></span>
+            <span class="saldo-box oculto" id="caixaSaldo">🪙 <span id="saldo">1000</span></span>
+            <button id="btnLogin" onclick="abrirLogin()">Entrar</button>
+            <button id="btnCadastro" onclick="abrirCadastro()">Cadastrar</button>
+            <button id="btnSair" class="oculto" onclick="sair()">Sair</button>
+        </div>
+    </header>
+
+    <div class="aviso">
+        ⚠️ Apenas diversão — Nenhum valor real envolvido
+    </div>
+
+    <main>
+        <!-- Telas de Login e Cadastro -->
+        <div id="telaLogin" class="tela-form oculto">
+            <div class="form-box">
+                <h2>🔐 Entrar</h2>
+                <input type="text" id="loginUsuario" placeholder="Seu nome de usuário">
+                <input type="password" id="loginSenha" placeholder="Sua senha">
+                <button onclick="fazerLogin()">Entrar</button>
+                <p>Não tem conta? <a href="#" onclick="abrirCadastro()">Cadastre-se</a></p>
+                <button class="fechar-form" onclick="fecharFormularios()">✕</button>
+            </div>
+        </div>
+
+        <div id="telaCadastro" class="tela-form oculto">
+            <div class="form-box">
+                <h2>📝 Criar Conta</h2>
+                <input type="text" id="cadastroUsuario" placeholder="Escolha um nome de usuário">
+                <input type="password" id="cadastroSenha" placeholder="Crie uma senha">
+                <button onclick="fazerCadastro()">Criar Conta</button>
+                <p>Já tem conta? <a href="#" onclick="abrirLogin()">Entre</a></p>
+                <button class="fechar-form" onclick="fecharFormularios()">✕</button>
+            </div>
+        </div>
+
+        <!-- Aviso se não estiver logado -->
+        <div id="avisoLogin" class="aviso-login">
+            🔒 Faça login ou cadastre-se para jogar (grátis!)
+        </div>
+
+        <!-- Grade de Jogos -->
+        <section id="areaJogos" class="oculto">
+            <h2>🎮 Escolha seu Jogo</h2>
+            <div class="jogos-grid">
+                <div class="jogo-card" onclick="iniciarJogo('sorte', 50)">
+                    <h3>🎰 Jogo da Sorte</h3>
+                    <p>Aposta: 50 moedas</p>
+                </div>
+                <div class="jogo-card" onclick="iniciarJogo('cartas', 40)">
+                    <h3>🃏 Cartas da Sorte</h3>
+                    <p>Aposta: 40 moedas</p>
+                </div>
+                <div class="jogo-card" onclick="iniciarJogo('dados', 60)">
+                    <h3>🎲 Dados da Sorte</h3>
+                    <p>Aposta: 60 moedas</p>
+                </div>
+                <div class="jogo-card" onclick="iniciarJogo('frutas', 30)">
+                    <h3>🍇 Frutas</h3>
+                    <p>Aposta: 30 moedas</p>
+                </div>
+                <div class="jogo-card" onclick="iniciarJogo('ouro', 80)">
+                    <h3>🏆 Mina de Ouro</h3>
+                    <p>Aposta: 80 moedas</p>
+                </div>
+                <div class="jogo-card" onclick="iniciarJogo('tigre', 100)">
+                    <h3>🐯 Caminho do Tigre</h3>
+                    <p>Aposta: 100 moedas</p>
+                </div>
+            </div>
+
+            <!-- Área do Jogo Aberto -->
+            <div id="areaJogoAberto" class="area-jogo oculto">
+                <button class="fechar" onclick="fecharJogo()">✕</button>
+                <div id="conteudoJogo"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <a href="admin.html" class="link-admin">🔧 Painel Administrativo</a>
+        <p>Versão Demonstração — Sem valor monetário</p>
+    </footer>
+
+    <script src="codigo.js"></script>
+</body>
+</html>

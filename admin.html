@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔧 Painel Administrativo</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body class="admin-body">
+    <header>
+        <div class="logo">🔧 Painel Administrativo</div>
+        <a href="index.html" class="voltar">← Voltar aos Jogos</a>
+    </header>
+
+    <main class="admin-main">
+        <h2>Painel de Controle</h2>
+
+        <div class="admin-card">
+            <h3>💰 Saldo Inicial para Novos Usuários</h3>
+            <input type="number" id="saldoInicial" value="1000">
+            <button onclick="salvarSaldoInicial()">Salvar</button>
+        </div>
+
+        <div class="admin-card">
+            <h3>🎲 Porcentagem de Vitória (%)</h3>
+            <input type="number" id="taxaVitoria" value="35" min="0" max="100">
+            <button onclick="salvarTaxa()">Salvar</button>
+        </div>
+
+        <div class="admin-card">
+            <h3>👤 Usuários Cadastrados</h3>
+            <div id="listaUsuarios" class="lista-box"></div>
+            <button onclick="carregarUsuarios()">🔄 Atualizar Lista</button>
+        </div>
+
+        <div class="admin-card">
+            <h3>🗑️ Resetar Tudo</h3>
+            <button class="btn-perigo" onclick="resetarTudo()">Apagar Todos e Recomeçar</button>
+        </div>
+    </main>
+
+    <script src="codigo.js"></script>
+</body>
+</html>
